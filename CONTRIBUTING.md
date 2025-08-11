@@ -1,3 +1,4 @@
+
 # Contributing to RahaSoft ERP
 
 We love your input! We want to make contributing to RahaSoft ERP as easy and transparent as possible, whether it's:
@@ -7,6 +8,18 @@ We love your input! We want to make contributing to RahaSoft ERP as easy and tra
 - Submitting a fix
 - Proposing new features
 - Becoming a maintainer
+
+## What's Required
+
+**Planning:** Define MVP scope, prioritize modules, design database schema, and set up project management.
+
+**Development:** Scaffold frontend and backend, implement authentication, build each module, set up state management, integrate database, and develop APIs.
+
+**Testing:** Write unit/integration tests, set up CI/CD, and ensure high coverage.
+
+**Documentation:** Maintain up-to-date README, contributing guidelines, and API docs.
+
+**Deployment:** Prepare Docker/Kubernetes configs, set up cloud infrastructure, and monitor performance/security.
 
 ## Development Process
 

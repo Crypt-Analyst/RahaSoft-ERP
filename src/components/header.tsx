@@ -38,7 +38,7 @@ export function Header() {
               <User className="h-4 w-4 text-white" />
             </div>
             <div className="hidden md:block text-left">
-              <div className="text-sm font-medium">John Doe</div>
+              <div className="text-sm font-medium">Bilford Bwire</div>
               <div className="text-xs text-gray-500">Administrator</div>
             </div>
             <ChevronDown className="h-4 w-4" />

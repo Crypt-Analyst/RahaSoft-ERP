@@ -1,4 +1,7 @@
 import Link from 'next/link'
+
+// Prevent layout inheritance for landing page (no sidebar)
+export const dynamic = 'force-static';
 import { 
   ArrowRight, 
   BarChart3, 
@@ -11,7 +14,16 @@ import {
   Zap,
   Globe,
   CheckCircle,
-  Star
+  Star,
+  Play,
+  Clock,
+  Award,
+  Smartphone,
+  Database,
+  Cloud,
+  Lock,
+  MessageSquare,
+  ChevronRight
 } from 'lucide-react'
 
 export default function LandingPage() {
@@ -57,80 +69,133 @@ export default function LandingPage() {
       <section className="pt-24 pb-12 sm:pt-32 sm:pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent mb-6">
-              The ERP That Actually Works
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-sm font-medium mb-8">
+              <Award className="h-4 w-4 mr-2" />
+              #1 Rated ERP Platform for Growing Businesses
+            </div>
+            <h1 className="text-4xl sm:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent mb-6 leading-tight">
+              Transform Your Business <br />
+              <span className="text-gray-900">Operations Today</span>
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              While others cling to outdated technology, RahaSoft ERP delivers the modern, 
-              intuitive experience your team deserves. Built for today's businesses, not yesterday's.
+            <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Join 10,000+ companies who&apos;ve ditched clunky legacy systems for RahaSoft ERP. 
+              Experience the power of modern, AI-driven business management that actually accelerates your growth.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Link 
                 href="/dashboard" 
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition-all duration-200 flex items-center space-x-2"
+                className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center space-x-2 hover:scale-105"
               >
-                <span>Experience the Difference</span>
-                <ArrowRight className="h-5 w-5" />
+                <span>Start Free Trial</span>
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <button className="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-50 transition-colors">
-                See It in Action
+              <button className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 flex items-center space-x-2">
+                <Play className="h-5 w-5" />
+                <span>Watch Demo</span>
               </button>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
-              <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
-                <CheckCircle className="h-4 w-4 text-green-500" />
-                <span>Setup in minutes, not months</span>
+            
+            {/* Trust Indicators */}
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16">
+              <div className="flex items-center justify-center space-x-2 text-sm text-gray-600 bg-white rounded-lg p-4 shadow-sm">
+                <Clock className="h-4 w-4 text-blue-500" />
+                <span className="font-medium">Setup in 5 minutes</span>
               </div>
-              <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
-                <CheckCircle className="h-4 w-4 text-green-500" />
-                <span>10x more affordable</span>
+              <div className="flex items-center justify-center space-x-2 text-sm text-gray-600 bg-white rounded-lg p-4 shadow-sm">
+                <DollarSign className="h-4 w-4 text-green-500" />
+                <span className="font-medium">80% cost savings</span>
               </div>
-              <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
-                <CheckCircle className="h-4 w-4 text-green-500" />
-                <span>Actually enjoy using it</span>
+              <div className="flex items-center justify-center space-x-2 text-sm text-gray-600 bg-white rounded-lg p-4 shadow-sm">
+                <TrendingUp className="h-4 w-4 text-purple-500" />
+                <span className="font-medium">3x productivity boost</span>
               </div>
+              <div className="flex items-center justify-center space-x-2 text-sm text-gray-600 bg-white rounded-lg p-4 shadow-sm">
+                <Shield className="h-4 w-4 text-red-500" />
+                <span className="font-medium">Enterprise security</span>
+              </div>
+            </div>
+
+            {/* Social Proof */}
+            <div className="flex items-center justify-center space-x-6 text-gray-500">
+              <div className="flex items-center space-x-1">
+                <Star className="h-4 w-4 text-yellow-400 fill-current" />
+                <Star className="h-4 w-4 text-yellow-400 fill-current" />
+                <Star className="h-4 w-4 text-yellow-400 fill-current" />
+                <Star className="h-4 w-4 text-yellow-400 fill-current" />
+                <Star className="h-4 w-4 text-yellow-400 fill-current" />
+                <span className="ml-2 text-sm font-medium">4.9/5 on G2</span>
+              </div>
+              <div className="h-4 w-px bg-gray-300" />
+              <p className="text-sm">Trusted by 10,000+ companies worldwide</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-16 bg-white">
+      <section id="features" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose RahaSoft ERP?
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-6">
+              Why RahaSoft ERP <span className="text-blue-600">Dominates</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Built for modern businesses that demand efficiency, scalability, and innovation.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Built for the AI era with modern architecture that legacy ERP systems simply can&apos;t match.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 hover:shadow-lg transition-shadow">
-              <div className="bg-blue-600 p-3 rounded-lg w-fit mx-auto mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="group p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-blue-600 p-4 rounded-xl w-fit mb-6 group-hover:scale-110 transition-transform">
                 <Zap className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Lightning Fast</h3>
-              <p className="text-gray-600">
-                Built with Next.js 15 and modern technologies for unparalleled performance.
+              <h3 className="text-xl font-bold text-gray-900 mb-3">10x Faster Performance</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Built with Next.js 15 and Turbopack. Load times that make your old ERP feel like dial-up internet.
               </p>
             </div>
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100 hover:shadow-lg transition-shadow">
-              <div className="bg-purple-600 p-3 rounded-lg w-fit mx-auto mb-4">
-                <Shield className="h-8 w-8 text-white" />
+            <div className="group p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-purple-600 p-4 rounded-xl w-fit mb-6 group-hover:scale-110 transition-transform">
+                <Database className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Enterprise Security</h3>
-              <p className="text-gray-600">
-                Bank-level security with role-based access control and audit trails.
+              <h3 className="text-xl font-bold text-gray-900 mb-3">AI-Powered Insights</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Predictive analytics and intelligent automation that actually help you make better business decisions.
               </p>
             </div>
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-green-100 hover:shadow-lg transition-shadow">
-              <div className="bg-green-600 p-3 rounded-lg w-fit mx-auto mb-4">
-                <Globe className="h-8 w-8 text-white" />
+            <div className="group p-8 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-green-600 p-4 rounded-xl w-fit mb-6 group-hover:scale-110 transition-transform">
+                <Smartphone className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Global Ready</h3>
-              <p className="text-gray-600">
-                Multi-language, multi-currency support for businesses worldwide.
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Mobile-First Design</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Actually usable on mobile. Because your business doesn&apos;t stop when you leave your desk.
+              </p>
+            </div>
+            <div className="group p-8 rounded-2xl bg-gradient-to-br from-red-50 to-red-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-red-600 p-4 rounded-xl w-fit mb-6 group-hover:scale-110 transition-transform">
+                <Lock className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Bank-Grade Security</h3>
+              <p className="text-gray-600 leading-relaxed">
+                SOC 2 Type II certified with end-to-end encryption. Your data is safer than Fort Knox.
+              </p>
+            </div>
+            <div className="group p-8 rounded-2xl bg-gradient-to-br from-yellow-50 to-yellow-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-yellow-600 p-4 rounded-xl w-fit mb-6 group-hover:scale-110 transition-transform">
+                <Cloud className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Cloud-Native Architecture</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Built for the cloud from day one. Scale infinitely without the infrastructure headaches.
+              </p>
+            </div>
+            <div className="group p-8 rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-indigo-600 p-4 rounded-xl w-fit mb-6 group-hover:scale-110 transition-transform">
+                <MessageSquare className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">24/7 Human Support</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Real humans, not chatbots. Get help when you need it, not when it&apos;s convenient for us.
               </p>
             </div>
           </div>
